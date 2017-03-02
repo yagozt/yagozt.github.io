@@ -1,0 +1,2 @@
+# yagozt.github.io
+Blog
