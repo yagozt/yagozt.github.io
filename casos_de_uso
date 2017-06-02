@@ -110,3 +110,74 @@ Cancelar reunião
         a. Caso o sistema não receba 80% das confirmações, a reunião é cancelada automaticamente.
         b. Se cancelada, o sistema envia um aviso de agendar novamente a reunião.
 -----------------------------------------------------------------------------------------------------------------------------------------
+Subsistema: Gestão
+Caso de uso Efetuar Pagamento
+ 
+Descrição sucinta: Este caso de uso é responsável pela realização de pagamento do aluno a instituição.
+ 
+Fluxos de Eventos Normais
+Efetuar pagamento
+        1.	O Funcionário informa o valor a ser pago.
+        2.	Caso deseje, o Funcionário pode aplicar um desconto ao valor dependendo da forma de pagamento.
+        3.	Efetuar o pagamento na forma escolhida:
+                a.	Dinheiro.
+                b.	Cheque.
+                c.	Cartão.
+ 
+Fluxos de Eventos Variantes
+Efetuar pagamento
+        3a. Dinheiro
+                3a1. O Cliente informa quantia em dinheiro entregue pelo cliente.
+        	3a2. O sistema informa o valor do troco a ser dado ao cliente.
+        	3a3. O sistema registra o pagamento em dinheiro.
+Efetuar pagamento
+    	3b. Cheque
+        	3b1. O atendente informa os dados do cheque, a saber: banco, agência, conta e valor.
+        	3b2. O sistema registra o pagamento em cheque, armazenando os dados do cheque.
+Efetuar pagamento
+    	3c. Cartão
+        	3c1. O atendente envia as informações do cartão, valor e identificação da loja para o serviço de autorização
+                do Sistema de Operadoras de Cartão de Crédito.
+        	3c2. O Sistema de Operadoras de Cartão de Crédito envia o número da autorização.
+       		3c3. O sistema registra o pagamento em cartão, armazenando a operadora do cartão e o número da autorização.
+ 
+Fluxos de Eventos de Exceção
+Efetuar Pagamento
+        3a1. O valor da quantia paga em dinheiro é inferior ao valor a ser pago.
+                1.	Uma mensagem de erro é exibida informando que a turma está lotada.
+                2.	Informa uma outra turma que esteja disponível para o cliente, caso ele aceite segue para o passo 4.
+Efetuar Pagamento
+3b1. O valor do cheque é diferente do valor a ser pago
+        1.	Uma mensagem de erro é exibida informando que a turma está lotada.
+        2.	Informa uma outra turma que esteja disponível para o cliente, caso ele aceite segue para o passo 4.
+Efetuar Pagamento
+3b2. O Sistema de Operadoras de Cartão de Crédito não autoriza a transação
+        1.	Uma mensagem de erro é exibida informando que a turma está lotada.
+        2.	Informa uma outra turma que esteja disponível para o cliente, caso ele aceite segue para o passo 4.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Subsistema: Gestão
+Caso de uso: Cadastrar Patrimônio
+Descrição sucinta: Este caso de uso é responsável pela realização do cadastramento de todo patrimônio da empresa.
+Fluxos de Eventos Normais
+Cadastrar novo Patrimônio
+        1-	O administrador seleciona a opção de adicionar patrimônio
+        2-	O administrador preenche os dados do patrimônio, que o sistema pedir (nome, qtd, tipo, uso, área de uso…)
+        3-	O sistema verifica se os dados obrigatórios foram preenchidos.
+        4-	O sistema envia uma mensagem avisando que é preciso que as informações sejam preenchidas de forma bem caracterizada.
+        5-	O sistema gera um código de cadastro para o patrimônio
+        6-	O sistema associa o patrimônio de acordo com o que foi selecionado nos dados.
+Consultar patrimônio
+        1-	O administrador seleciona o patrimonio que deseja ver
+        2-	Os dados do patrimonio são apresentados.
+Excluir patrimônio
+        1-	O administrador seleciona o patrimonio a ser excluído
+        2-	O sistema apresenta os dados do patrimonio, e solicita confirmação de exclusão.
+        3-	O patrimonio é excluído.
+Fluxos de Eventos de Exceção
+Cadastrar novo patrimônio
+        1-	Patrimônio já existente.
+                a.	Uma mensagem de erro é exibida informando que o patrimonio já é cadastrado.
+                b.	Surgem 3 opções para o administrador:
+                        1.	Substituir o patrimonio já existente
+                        2.	Excluir o patrimonio já existente
+                        3.	Adicionar o patrimonio ao que já existe
