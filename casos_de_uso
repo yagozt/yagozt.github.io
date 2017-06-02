@@ -24,7 +24,7 @@ Cadastrar nova sala
 a.	Uma mensagem de erro é exibida.
 b.	Uma mensagem aparece perguntando se o funcionário deseja excluir/substituir a sala já existente.
 
--------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Subsistema: Gestão
 Caso de uso: Cadastrar professor
@@ -49,6 +49,64 @@ Cadastrar novo professor
 1-	Professor já cadastrado.
 a.	Uma mensagem de erro é exibida.
 b.	Uma mensagem aparecerá perguntando se o funcionário deseja excluir /substituir o professor existente.
--------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+Subsistema : Gestão
+Caso de uso: Cadastrar nova turma
+Descrição sucinta: Esse caso de uso é responsável pelo cadastramento de uma nova turma.
 
+Fluxos de eventos normais.
+Cadastrar nova turma
+1-	Funcionário seleciona disciplina da nova turma.
+2-	Funcionário associa os professores responsáveis pela turma.
+3-	Funcionário informa os dados gerais da turma (código, qtd…)
+4-	Funcionário cria o horário semanal da turma
+5-	De acordo com o horário proposto, o sistema determina as salas que serão utilizadas, de acordo com a disponibilidade.
+6-	O sistema associa os alunos que requisitarem essa disciplina, a essa nova turma.
+7-	O sistema envia uma notificação de turma para os alunos cadastrados.
+8-	O sistema cria as devidas áreas de comunicação para a turma, seja para enviar e baixar arquivos, como contato direto com o professor
+Consultar nova turma
+1-	O funcionário seleciona a turma que deseja consultar
+2-	Os dados da turma são apresentados.
+Excluir turma
+1-	O funcionário seleciona a turma que deseja cancelar
+2-	O sistema apresenta os dados da turma que será cancelada, e pede confirmação.
+3-	O sistema desassocia a turma dos alunos e dos professores.
+4-	A turma é excluída.
+----------------------------------------------------------------------------------------------------------------------------------------
 
+Subsistema: Gestão
+Caso de uso Agendar Reunião.
+Descrição sucinta: Este caso de uso é responsável pelo agendamento de reuniões entre administradores/funcionários,
+bem como reuniões pedagógicas e administrativas.
+ 
+Fluxo de Eventos Normais
+Agendar nova reunião:
+    1 – Funcionário ou Administrador define o tema da reunião;
+    2 – Funcionário ou Administrador define o horário e o dia da reunião, de acordo com o cronograma do curso;
+    3 – Funcionário ou Administrador define os participantes da reunião;
+    4 – O sistema envia um aviso aos remetentes com as informações colocadas pelo Funcionário/Administrador.
+    5 – O sistema cobra do remetente uma confirmação de visualização da mensagem.
+ 
+Consultar reunião:
+    1 – O remetente/funcionário/administrador seleciona a reunião que deseja consultar.
+    2 – O sistema abre as informações da reunião selecionada.
+ 
+Cancelar/Reagendar reunião.
+    1 – Funcionário ou Administrador pode cancelar uma reunião.
+    2 – Funcionário ou Administrador define o motivo do cancelamento.
+    3 – O sistema envia um novo aviso aos remetentes com o cancelamento da reunião/Reagendamento.
+    4 – O sistema cobra do remetente uma confirmação de visualização da mensagem.
+ 
+Fluxos de Eventos de Exceção
+Agendar nova reunião
+    1 – Todas as salas ocupadas no horário escolhido.
+        a. Uma mensagem de erro é exibida informando que não há salas disponíveis para o horário escolhido.
+        b. Informa a disponibilidade das salas e um horário mais próximo do escolhido para realização da reunião.
+        c. O sistema envia um aviso para confirmação do desejo de troca de horário, de acordo com o que foi proposto.
+        d. Se sim, o sistema envia o e-mail de confirmação para os remetentes e cobra a confirmação de presença.
+        e. Se não, o sistema volta para o início do agendamento.
+Cancelar reunião
+    2 – Participantes da reunião não confirmaram presença.
+        a. Caso o sistema não receba 80% das confirmações, a reunião é cancelada automaticamente.
+        b. Se cancelada, o sistema envia um aviso de agendar novamente a reunião.
+-----------------------------------------------------------------------------------------------------------------------------------------
