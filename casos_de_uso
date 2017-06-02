@@ -1,0 +1,54 @@
+Subsistema: Gestão
+Caso de uso: Cadastrar sala
+Descrição sucinta: Este caso de uso é responsável pela realização do cadastramento de uma nova sala.
+Fluxos de Eventos Normais
+Cadastrar nova sala
+1-	Funcionário seleciona a opção de cadastramento de sala.
+2-	Funcionário preenche os dados da nova sala (Número, Quantidade de alunos que cabem, patrimônio)
+3-	O sistema verifica se os dados obrigatórios foram preenchidos.
+4-	O sistema valida a sala, e a coloca em disponibilidade.
+Consultar dados da sala
+1-	O funcionário seleciona a sala que deseja consultar
+2-	Os dados da sala são apresentados.
+
+Excluir sala
+1-	O funcionário seleciona a sala que deseja excluir.
+2-	O sistema apresenta os dados da sala e pede confirmação de exclusão.
+3-	O sistema verifica se a sala está associada a algum curso/turma/disciplina.
+4-	Caso esteja associado, a sala não poderá ser excluída.
+5-	Caso não tenha nada associado, a sala é excluída.
+
+Fluxos de Eventos de Exceção
+Cadastrar nova sala
+1-	Sala já existente
+a.	Uma mensagem de erro é exibida.
+b.	Uma mensagem aparece perguntando se o funcionário deseja excluir/substituir a sala já existente.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Subsistema: Gestão
+Caso de uso: Cadastrar professor
+Descrição sucinta: Este caso de uso é responsável pela realização do cadastramento de um novo professor.
+Fluxos de Eventos Normais
+Cadastrar novo professor
+1-	Administrador seleciona a opção para cadastro do novo professor
+2-	Administrador preenche os dados do novo professor (NOME, CPF, DN,FORMACAO…)
+3-	O sistema verifica se todos os dados obrigatórios foram preenchidos.
+4-	O sistema automaticamente associa um login e uma senha para o professor cadastrado.
+5-	O sistema envia um e-mail para o professor com os dados de seu login e instruções de uso.
+Consultar dados do professor
+1-	O funcionário seleciona o professor que deseja consultar.
+2-	Os dados BÁSICOS do professor são apresentados, informações pessoais são omitidas.
+Cancelar cadastro do professor
+1-	O funcionário seleciona o professor que será excluído do sistema.
+2-	O sistema apresenta os dados do professor.
+3-	Caso o professor esteja associado a uma turma, o sistema apresentará uma mensagem de que o professor não poderá ser excluído.
+4-	Caso o professor não esteja associado a nada, o professor é excluído.
+Fluxos de eventos de exceção
+Cadastrar novo professor
+1-	Professor já cadastrado.
+a.	Uma mensagem de erro é exibida.
+b.	Uma mensagem aparecerá perguntando se o funcionário deseja excluir /substituir o professor existente.
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
