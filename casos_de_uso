@@ -181,3 +181,40 @@ Cadastrar novo patrimônio
                         1.	Substituir o patrimonio já existente
                         2.	Excluir o patrimonio já existente
                         3.	Adicionar o patrimonio ao que já existe
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Subsistema: Gestão
+Caso de uso Efetuar Matrícula
+ 
+Descrição sucinta: Este caso de uso é responsável pela realização da matrícula do aluno nas turmas.
+ 
+Fluxos de Eventos Normais
+Efetuar nova matrícula
+        Funcionário Seleciona o aluno.
+        Funcionário seleciona o curso.
+        O Sistema verifica disponibilidade de turma.
+        O Sistema calcula valor de matrícula.
+        o Sistema associa o aluno a turma.
+        O Sistema gera número de matrícula para o aluno.
+        O Cliente realiza o caso de uso “Efetuar Pagamento”.
+        O Sistema informa que a matrícula foi realizada com sucesso.
+ 
+Consultar dados matrícula
+        O Funcionário seleciona a matrícula que deseja consultar.
+        Os dados da matrícula são apresentados.
+ 
+Cancelar matrícula
+        O Funcionário seleciona a matrícula que deseja cancelar.
+        O Sistema apresenta os dados da matrícula que será cancelada e pede confirmação.
+        A matrícula selecionada é excluída.
+        Se o cliente já tiver pago, o dinheiro é devolvido.
+ 
+Fluxos de Eventos de Exceção
+Efetuar nova matrícula
+        3. Turma está lotada.
+                3a. Uma mensagem de erro é exibida informando que a turma está lotada.
+                3b. Informa uma outra turma que esteja disponível para o cliente, caso ele aceite segue para o passo 4.
+Cancelar matrícula
+        1. A turma já iniciou as aulas.
+                1a. Uma mensagem de alerta é exibida informando que as aulas já foram iniciadas.
+                1b. Informa que o dinheiro será devolvido apenas 60% do valor pago.
